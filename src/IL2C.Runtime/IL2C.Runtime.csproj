@@ -6,10 +6,7 @@
     <NoPackageAnalysis>true</NoPackageAnalysis>
     <IncludeBuildOutput>false</IncludeBuildOutput>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="RelaxVersioner" Version="2.11.0" PrivateAssets="all" />
-  </ItemGroup>
+  
 
   <ItemGroup>
     <None Remove="build.cmake\**\*" />

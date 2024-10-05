@@ -9,7 +9,7 @@ namespace TakeAdvantageWithIL2CInvoke
     // IL2C/Invoke doesn't need to adjust any field offset/packing.
     // Managed side declarations are pure stub.
     [NativeType("time.h", SymbolName = "struct tm")]
-    internal struct tm
+    internal struct TimeStruct
     {
         public int tm_sec;
         public int tm_min;
@@ -28,12 +28,12 @@ namespace TakeAdvantageWithIL2CInvoke
         // extern "C" time_t mktime(struct tm*);
         [NativeMethod("time.h")]
         [MethodImpl(MethodImplOptions.InternalCall)]
-        private static extern long mktime(in tm tmValue);
+        private static extern long mktime(in TimeStruct timeStructValue);
 
         public static void Main()
         {
             // 2022/10/23 12:34:56
-            var tmValue = new tm
+            var tmValue = new TimeStruct
             {
                 tm_year = 2022 - 1900,
                 tm_mon = 10 - 1,

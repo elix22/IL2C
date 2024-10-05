@@ -43,7 +43,7 @@ IL2C_THREAD_CONTEXT* il2c_acquire_thread_context__(void)
         pThreadContext = &pRuntimeThread->context;
 
         pThreadContext->rawHandle = il2c_get_current_thread__();
-        pThreadContext->id = il2c_get_current_thread_id__();
+        pThreadContext->id = (int32_t)il2c_get_current_thread_id__();
         il2c_initialize_monitor_lock__((void*)&pThreadContext->lockForCollect);
 
         // Save IL2C_THREAD_CONTEXT into tls.
@@ -92,7 +92,7 @@ System_Threading_Thread* il2c_new_thread__(System_Delegate* start)
     pRuntimeThread->context.rawHandle = -1;
      
     // Initialize thread context.
-    pRuntimeThread->context.id = il2c_get_current_thread_id__();
+    pRuntimeThread->context.id = (int32_t)il2c_get_current_thread_id__();
     il2c_initialize_monitor_lock__((void*)&pRuntimeThread->context.lockForCollect);
 
     // Marked instance is initialized. (and will handle by GC)

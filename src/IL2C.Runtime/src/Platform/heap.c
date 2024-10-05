@@ -74,7 +74,7 @@ void* il2c_malloc(size_t size)
     p0->Index = index;
 
     // Thread Id
-    p0->AllocateId = il2c_get_current_thread_id__();
+    p0->AllocateId = (int32_t)il2c_get_current_thread_id__();
     p0->FreeId = INT32_MIN;
 
     // Head guard bytes
@@ -99,7 +99,7 @@ void il2c_free(void* p)
         p0--;
 
         // Thread Id
-        p0->FreeId = il2c_get_current_thread_id__();
+        p0->FreeId = (int32_t)il2c_get_current_thread_id__();
 
         // Front guard bytes
         il2c_assert(p0->HeadGuardBytes == IL2C_HEAP_GUARD_BYTES);

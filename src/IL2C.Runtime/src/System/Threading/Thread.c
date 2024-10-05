@@ -68,7 +68,7 @@ static IL2C_THREAD_ENTRY_POINT_RESULT_TYPE System_Threading_Thread_InternalEntry
     il2c_assert(pRuntimeThread->bottomFrame.exception__ == NULL);
 
     // Set real thread id.
-    pRuntimeThread->context.id = il2c_get_current_thread_id__();
+    pRuntimeThread->context.id = (int32_t)il2c_get_current_thread_id__();
 
     // Save IL2C_THREAD_CONTEXT into tls.
     il2c_set_tls_value(g_TlsIndex__, (void*)&pRuntimeThread->context.pFrame);
@@ -125,7 +125,7 @@ static IL2C_THREAD_ENTRY_POINT_RESULT_TYPE System_Threading_Thread_InternalEntry
     il2c_assert(pRuntimeThread->bottomFrame.exception__ == NULL);
 
     // Set real thread id.
-    pRuntimeThread->context.id = il2c_get_current_thread_id__();
+    pRuntimeThread->context.id = (int32_t)il2c_get_current_thread_id__();
 
     // Save IL2C_THREAD_CONTEXT into tls.
     il2c_set_tls_value(g_TlsIndex__, (void*)&pRuntimeThread->context.pFrame);
