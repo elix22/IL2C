@@ -96,7 +96,7 @@ void* il2c_pinvoke_get_function__(const char* pDllName, const char* pEntryPointN
 #else
 IL2C_CONST_STRING(il2c_not_implemented_message, L"Not implemented.");
 
-il2c_noreturn__ void* il2c_pinvoke_get_function__(const char* pDllName, const char* pEntryPointName)
+void* il2c_pinvoke_get_function__(const char* pDllName, const char* pEntryPointName)
 {
     il2c_assert(pDllName != NULL);
     il2c_assert(pEntryPointName != NULL);

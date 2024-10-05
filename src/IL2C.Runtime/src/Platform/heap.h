@@ -65,7 +65,11 @@ extern void il2c_free__(void* p);
 
 #include <stdint.h>
 #include <wchar.h>
+#if defined(__APPLE__)
+#include <stdlib.h>
+#else
 #include <malloc.h>
+#endif
 #if !defined(_WIN32)
 #include <alloca.h>
 #endif

@@ -41,7 +41,7 @@ typedef IL2C_THREAD_ENTRY_POINT_RESULT_TYPE (*IL2C_THREAD_ENTRY_POINT_TYPE)(IL2C
 // Native thread id on the Linux
 #define il2c_get_current_thread_id__() ((int32_t)syscall(SYS_gettid))
 #else
-#define il2c_get_current_thread_id__() ((int32_t)pthread_self())
+#define il2c_get_current_thread_id__() (pthread_self())
 #endif
 extern intptr_t il2c_create_thread__(IL2C_THREAD_ENTRY_POINT_TYPE entryPoint, IL2C_THREAD_ENTRY_POINT_PARAMETER_TYPE parameter);
 #define il2c_resume_thread__(handle)

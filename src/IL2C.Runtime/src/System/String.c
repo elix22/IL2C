@@ -123,7 +123,7 @@ int32_t il2c_get_utf8_length(const char* pUtf8String, bool detectInvalidChars)
     int32_t length = 1;
     while (1)
     {
-        const char ch0 = *pUtf8String;
+        const unsigned char ch0 = *pUtf8String;
         if (il2c_unlikely__(ch0 == '\0'))
         {
             break;
@@ -186,7 +186,7 @@ wchar_t* il2c_utf16_from_utf8_and_get_last(wchar_t* pDest, const char* pUtf8Stri
 
     while (1)
     {
-        const char ch0 = *pUtf8String++;
+        const unsigned char ch0 = *pUtf8String++;
         if (il2c_unlikely__(ch0 == '\0'))
         {
             *pDest = L'\0';
