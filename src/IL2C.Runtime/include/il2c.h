@@ -210,6 +210,10 @@ extern void il2c_initialize(void);
 extern void il2c_shutdown(void);
 #endif
 
+#if defined(__APPLE__)
+extern void il2c_initialize(void);
+extern void il2c_shutdown(void);
+#endif
 ///////////////////////////////////////////////////////
 // Runtime stack frame types
 
