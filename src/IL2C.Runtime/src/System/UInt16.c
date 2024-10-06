@@ -58,7 +58,7 @@ bool System_UInt16_TryParse__System_String_System_UInt16_REF(System_String* s, u
     il2c_assert(s->string_body__ != NULL);
 
     wchar_t* endPtr;
-
+    il2c_errno = 0;
     unsigned long value = il2c_wtou32(s->string_body__, &endPtr, 10);
     *result = (uint16_t)value;
 

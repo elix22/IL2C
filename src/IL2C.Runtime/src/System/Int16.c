@@ -56,7 +56,7 @@ bool System_Int16_TryParse__System_String_System_Int16_REF(System_String* s, int
     il2c_assert(s->string_body__ != NULL);
 
     wchar_t* endPtr;
-
+    il2c_errno = 0;
     long value = il2c_wtoi32(s->string_body__, &endPtr, 10);
     *result = (int16_t)value;
 

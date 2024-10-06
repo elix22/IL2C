@@ -60,7 +60,7 @@ bool System_Single_TryParse__System_String_System_Single_REF(System_String* s, f
     il2c_assert(s->string_body__ != NULL);
 
     wchar_t* endPtr;
-
+    il2c_errno = 0;
     float value = il2c_wcstof(s->string_body__, &endPtr);
     *result = value;
 
