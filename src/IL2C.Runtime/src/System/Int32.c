@@ -58,6 +58,7 @@ bool System_Int32_TryParse__System_String_System_Int32_REF(System_String* s, int
     il2c_assert(s->string_body__ != NULL);
 
     wchar_t* endPtr;
+    il2c_errno = 0;
 
     *result = (int32_t)il2c_wtoi32(s->string_body__, &endPtr, 10);
     return ((s->string_body__ != endPtr) && (il2c_errno == 0)) ? true : false;
